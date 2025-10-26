@@ -1,7 +1,7 @@
 Discussion (Experiment 1 — KV-Cache):
 - Device: cpu
-- With KV-cache, throughput changed by ~214.7% vs. no-cache.
-- Total latency changed by ~185.5% (positive means latency improved with cache).
-- Peak memory changed by ~-99.8% (positive means more memory with cache).
+- With KV-cache, throughput changed by ~212.4% vs. no-cache.
+- Total latency changed by ~181.1% (positive means latency improved with cache).
+- Peak memory changed by ~-99.7% (positive means more memory with cache).
 These trends match the expectation that KV-cache speeds up autoregressive decoding by reusing past keys/values,
 often increasing throughput and reducing per-token latency, at the cost of extra memory to store the cache.
