@@ -231,17 +231,7 @@ def main():
 
     make_plots(summary, "exp3_cache_scaling")
 
-    # Short auto-discussion text (optional but useful for README)
-    # You can comment these lines if you don't want a text file.
-    lines = [
-        "Discussion (Experiment 3 — Cache Scaling with Sequence Length):",
-        "- Theoretical KV cache grows ~linearly with sequence length: ~O(B * L * H * (T + gen) * head_dim * bytes), with B=1 here.",
-        "- Measured per-token latency tends to increase with longer prompts because each decode step attends to a larger KV cache.",
-        "- Differences between measured peak memory and theory are expected: framework overhead, allocator behavior, activations, etc.",
-    ]
-    with open("exp3_cache_scaling_discussion.txt", "w", encoding="utf-8") as f:
-        f.write("\n".join(lines))
-    print("Saved:", os.path.abspath("exp3_cache_scaling_discussion.txt"))
+   
 
 if __name__ == "__main__":
     main()
