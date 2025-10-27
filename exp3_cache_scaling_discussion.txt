@@ -1,0 +1,4 @@
+Discussion (Experiment 3 — Cache Scaling with Sequence Length):
+- Theoretical KV cache grows ~linearly with sequence length: ~O(B * L * H * (T + gen) * head_dim * bytes), with B=1 here.
+- Measured per-token latency tends to increase with longer prompts because each decode step attends to a larger KV cache.
+- Differences between measured peak memory and theory are expected: framework overhead, allocator behavior, activations, etc.
